@@ -40,7 +40,7 @@ function TestExample2(){
     })
 
     StepTest.step("Say", function(option){
-      this.myLib["say" + option.k](option.to);
+      this.myLib[option.k](option.to);
     })
 
     eval(test.getValue())
