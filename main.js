@@ -39,6 +39,10 @@ function TestExample2(){
       this.myLib = new MyLib();
     })
 
+    StepTest.step("Say", function(option){
+      this.say = `${option.content} ${option.to}`;
+    })
+
     eval(test.getValue())
 
     var log = "";
