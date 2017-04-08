@@ -1,6 +1,5 @@
 function TestExample1(){
   var result = document.querySelector("#example-1-results");
-  result.innerHTML = "";
   try{
     var StepTest = window.StepTest.Suite();
     MyLib = eval(code.getValue())
@@ -10,16 +9,18 @@ function TestExample1(){
     })
 
     eval(testValue)
+    var log = ""
 
     StepTest.log = function(logInfo){  
-      log = "<div class='test'>"
+      log += "<div class='test'>"
       log += logInfo.replace(/\n/g, "<br />").replace(/Passed\:/g, "<span class='passed'>Passed:</span>");
       log = log.replace(/Failed\:/g, "<span class='failed'>Failed:</span>")
       log += "</div>"
-      result.innerHTML += log;
     }
 
-    console.log(result)
+    StepTest.on("finished", function(){
+      result.innerHTML = log;
+    })
 
     StepTest.play();
   }catch(errors){
@@ -30,7 +31,6 @@ function TestExample1(){
 
 function TestExample2(){
   var result = document.querySelector("#example-2-results");
-  result.innerHTML = ""
   try{
     var StepTest = window.StepTest.Suite();
     MyLib = eval(codeValue);
@@ -41,13 +41,17 @@ function TestExample2(){
 
     eval(test.getValue())
 
+    var log = "";
     StepTest.log = function(logInfo){  
-      log = "<div class='test'>"
+      log += "<div class='test'>"
       log += logInfo.replace(/\n/g, "<br />").replace(/Passed\:/g, "<span class='passed'>Passed:</span>");
       log = log.replace(/Failed\:/g, "<span class='failed'>Failed:</span>")
       log += "</div>"
-      result.innerHTML += log;
     }
+
+    StepTest.on("finished", function(){
+      result.innerHTML = log;
+    })
 
     StepTest.play();
   }catch(errors){
