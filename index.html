@@ -78,11 +78,13 @@ StepTest
       .CodeMirror, .CodeMirror-scroll, .CodeMirror-sizer,.CodeMirror-gutter{
         height: auto;
       }
-      #test, #code, .result{
-        width: 49%;
-        display: inline-block;
-        vertical-align: top;
-        box-sizing: border-box;
+      @media (min-width: 600px) {
+        #test, #code, .result{
+          width: 49%;
+          display: inline-block;
+          vertical-align: top;
+          box-sizing: border-box;
+        }
       }
       .result{
         padding: 0px 1em;
