@@ -48,7 +48,7 @@ StepTest
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
       body, html{
-        background-color: #fff;
+        background-color: #c5f3b9;
         font-family: 'Open Sans', sans-serif;
         padding: 0px;
         margin: 0px;
@@ -68,7 +68,7 @@ StepTest
         font-size: 20px;
         font-weight: 500;
       }
-      p:not(:first-child){
+      .block:not(:first-child){
         margin-top: 10em;
       }
       .CodeMirror{
@@ -90,7 +90,7 @@ StepTest
       .main{
         padding: 20px 40px;
         background-color: #efefef;
-        box-shadow: inset 0px 1px 1px #aaa;
+        border-top: 1px solid #ccc;
       }
       .passed{
         color: #00ff00;
@@ -109,7 +109,6 @@ StepTest
       .logo{
         font-size: 14px;
         margin: 1em;
-        margin-left: 40px;
         display: inline-block;
       }
       .logo .icon{
@@ -140,45 +139,108 @@ StepTest
         vertical-align: middle;
         padding-left: 1em;
       }
+      .header a, .header a:active, .header a:visited{
+        color:#749a89;
+        font-weight: 300;
+        transition: color 0.5s ease;
+        font-size: 1.4em;
+        text-decoration: none;
+      }
+      .header a:hover{
+        transition: none;
+        color: #1d352a;
+      }
+      .header{
+        margin-left: 40px;
+      }
+      .links ul{
+        list-style-type: none;
+        text-align: center;
+      }
+      .links ul li{
+        padding: .1em 1.4em;
+        display: inline-block;
+      }
+      .reasons{
+        background-color: #202020;
+        border-radius: 3px;
+        color: #fff;
+        margin: 0px auto;
+        display: inline-block;
+        padding-bottom: 1em;
+        padding-right: 1em;
+      }
+      .reasons li{
+        font-weight: 300;
+        margin-top: 12px;
+      }
+      .text-center{
+        text-align: center;
+      }
+      .text-left{
+        text-align: left;
+      }
+      .logo-slug{
+        margin-top: 1.8em;
+      }
     </style>
    
   </head>
   <body>
     <div class="header">
-      <div class="logo">
-        <div class="icon">
-            <i class="fa fa-play" aria-hidden="true"></i>
+      <div class="logo-slug">
+        <div class="logo">
+          <div class="icon">
+              <i class="fa fa-play" aria-hidden="true"></i>
+          </div>
+          <div class="name">
+            <h1>
+              Step<br />Test
+            </h1>
+          </div>
         </div>
-        <div class="name">
-          <h1>
-            Step<br />Test
-          </h1>
-        </div>
+        <div class="slugline">A tool for seeing errors as they happen, <br />rather than after.</div>
       </div>
-      <div class="slugline">A tool for seeing errors as they happen, <br />rather than after.</div>
+      <div class="links">
+        <ul>
+          <li>
+            <a href="https://github.com/step-test/step-test">Fork on Github</a>
+          </li>
+          <li>
+            <a href="https://github.com/step-test/karma-step-test">Karma Test Runner</a>
+          </li>
+          <li>
+            <a href="https://github.com/step-test/step-test-explain">StepTest Explain (Tool)</a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="main">
-      Why would you want to use Step Test?
-      <ol>
-        <li>
-          5KB of minified Goodness.
-        </li>
-        <li>
-          Control of your suite when developing so you can see it play through.
-          <br />
-          Play, Pause, and Next allow you to control every step.
-        </li>
-        <li>
-          ES6 Ready with its object Oriented Class Structure.
-        </li>
-        <li>
-          Easy to add features to and build out for your needs.
-        </li>
-        <li>
-          Document through your tests.
-        </li>
-      </ol>
-      <p>
+      <div class="block text-center">
+        <h2>
+        Why would you want to use Step Test?
+        </h2>
+        <ol class="reasons text-left">
+          <li>
+            A whole 5KB of minified Goodness.
+          </li>
+          <li>
+            Control of your suite when developing so you can see it play through.
+            <br />
+            <strong>Play</strong>, <strong>Pause</strong>, and <strong>Next</strong> allow you to control every step.
+          </li>
+          <li>
+            ES6 Ready with its object Oriented Class Structure.
+          </li>
+          <li>
+            Easy to add features to and build out for your needs.
+          </li>
+          <li>
+            Document through your tests.
+          </li>
+        </ol>
+      </div>
+      <div class="block">
         <h2>Writing Your Code</h2>
         <div>
           <div id="code">
@@ -188,15 +250,15 @@ StepTest
             </div>
           </div>
         </div>
-      </p>
-      <p>
+      </div>
+      <div class="block">
         <h2>Writing Your Tests</h2>
         <div>
-          Note: Class Level Steps Available
+          <span style="color: #202020"><strong>Note:</strong></span> Class Level Step Available
           <br />
-          StepTest.step("My Lib Setup", function(){ <br />
-          &nbsp; &nbsp; this.myLib = new MyLib(); <Br />
-          })
+          <span style="color: #401d0b">StepTest</span>.<span style="color: #8a666c">step</span><span style="color:#214000">(</span><span style="color:#465e62">"My Lib Setup"</span>, <span style="color: #565e22">function</span><span style="color:#214000">(){</span> <br />
+          &nbsp; &nbsp; <span style="color: #565e22">this</span>.<span style="color: #8a666c">myLib</span> <span style="color: #cf4800">=</span> <span style="color: #565e22">new</span> <span style="color: #401d0b">MyLib</span><span style="color:#214000">(); <span><br />
+         <span style="color:#214000">})</span>
           <br />
           <br />
           <div id="test">
@@ -206,7 +268,7 @@ StepTest
             </div>
           </div>
         </div>
-      </p>
+      </div>
     </div>
     <script>
       var codeValue = document.querySelector("#source-code").innerHTML;
