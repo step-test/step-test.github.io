@@ -1,0 +1,126 @@
+
+<script type="text/template" id="source-code"> // Edit Code to see instant Results
+MyLib = function(){
+    this.say = "";
+
+    this.hello = function(name){
+        this.say = "Hello " + name;
+    }
+
+    this.goodbye = function(name){
+        this.say = "Goodbye " + name;
+    }
+}
+</script>
+<script type="text/template" id="test-code"> // Edit Test to see instant Results
+StepTest
+  .test("MyLib#hello")
+  .step("My Lib Setup")
+  .step("Say Hello", function(){
+      this.myLib.hello("Carson");
+  })
+  .expect("myLib's say Variable should be 'Hello Carson'", function(){
+    this.ok(this.myLib.say == "Hello Carson");
+  });
+
+StepTest
+  .test("MyLib#goodbye")
+  .step("My Lib Setup")
+  .step("Say Goodbye", function(){
+      this.myLib.goodbye("Carson");
+  })
+  .expect("myLib's say Variable should be 'Goodbye Carson'", function(){
+    this.ok(this.myLib.say == "Goodbye Carson");
+  });
+</script>
+
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" />
+    <script src="https://cdn.rawgit.com/step-test/step-test/7ba19a9a21abdcf43ae0a28827f0e51211210bc2/build/step-test.js"></script>
+    <script src="/main.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/theme/ambiance.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo-slug">
+        <div class="logo">
+          <div class="icon">
+              <i class="fa fa-play" aria-hidden="true"></i>
+          </div>
+          <div class="name">
+            <h1>
+              Step<br />Test
+            </h1>
+          </div>
+        </div>
+        <div class="slugline">A tool for seeing errors as they happen, <br />rather than after.</div>
+      </div>
+      <div class="links">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/step-test/step-test">Fork on Github</a>
+          </li>
+          <li>
+            <a href="https://github.com/step-test/karma-step-test">Karma Test Runner</a>
+          </li>
+          <li>
+            <a href="https://github.com/step-test/step-test-explain">StepTest Explain (Tool)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <div class="block text-center">
+        <h2>
+          The Case for Emedded Tests
+        </h2>
+        <div class="panel text-left">
+          Embedded testing can help your library stay stable and not in the ways you expect.
+          Step Test is designed to be small and deliverabe with libs for all the things you didn't expect your lib consumers to do.<br />
+
+          <h3>Over Riding Your Lib</h3>
+          For instance 
+          <ol>
+            <li>
+              You create a class called Car
+            </li>
+            <li>
+              That class has a function called drive.
+            </li>
+            <li>
+              Drive triggers an observable event.
+            </li>
+            <li>
+              Lib consumer overrides the function without not knowing about the observable event.
+            </li>
+            <li>
+              Hooks things into the Car on "drive" event and every time the function is called nothing happens
+            </li>
+          </ol>
+          <br />
+          This is where step test comes in, because you wrote tests and deliver them, the developer can run them manually,
+          or they can be set to run on load and console log warnings.
+          <br />
+          <br />
+          Warning It seems the drive function no longer calls the class' observer could you have overridden that function?
+          <h3>Browser Testing</h3>
+          You can embed your tests and have them run in the background, if there is a plugin or ie version that doesn't do what you need,
+          this is a good way to find out.
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

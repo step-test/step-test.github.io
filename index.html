@@ -46,148 +46,8 @@ StepTest
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <style>
-      body, html{
-        background-color: #101010;
-        font-family: 'Open Sans', sans-serif;
-        padding: 0px;
-        margin: 0px;
-      }
-      h1, h2, h3{
-        text-align:center;
-      }
-      h1{
-        font-size: 60px;
-        font-weight: 300;
-      }
-      h2{
-        font-size: 35px;
-        font-weight: 500;
-      }
-      h3{
-        font-size: 20px;
-        font-weight: 500;
-      }
-      .block:not(:first-child){
-        margin-top: 10em;
-      }
-      .CodeMirror{
-        font-family: 'Open Sans', sans-serif !important;
-        border-radius: 3px;
-      }
-      .CodeMirror, .CodeMirror-scroll, .CodeMirror-sizer,.CodeMirror-gutter{
-        height: auto;
-      }
-      @media (min-width: 600px) {
-        #test, #code, .result{
-          width: 49%;
-          display: inline-block;
-          vertical-align: top;
-          box-sizing: border-box;
-        }
-      }
-      .result{
-        padding: 0px 1em;
-      }
-      .main{
-        padding: 20px 40px;
-        background-color: #efefef;
-        border-top: 1px solid #ccc;
-      }
-      .passed{
-        color: #00ff00;
-      }
-      .failed{
-        color: #ff0000;
-      }
-
-      .test{
-        background-color: #202020;
-        color: #efefef;
-        padding: 1em;
-        border-radius: 3px;
-        margin-bottom: 1em;
-      }
-      .logo{
-        font-size: 14px;
-        margin: 1em;
-        display: inline-block;
-      }
-      .logo .icon{
-        background-color: #068e62;
-        display: inline-block;
-        font-size: 5em;
-        padding: .23em .6em;
-        border-radius: .2em;
-        color: #fff;
-      }
-      .logo .name, .logo .icon{
-        vertical-align: middle;
-      }
-      .logo .name{
-        display: inline-block;
-      }
-      .logo h1{
-        font-weight: 500;
-        line-height: 1em;
-        font-size: 3.98em;
-        -webkit-margin-after: 0px;
-        -webkit-margin-before: 0px;
-        color: #068e62;
-      }
-      .slugline{
-        font-size: 2em;
-        display: inline-block;
-        vertical-align: middle;
-        padding-left: 1em;
-      }
-      .header a, .header a:active, .header a:visited{
-        color:#5a8873;
-        font-weight: 300;
-        transition: color 0.5s ease;
-        font-size: 1.4em;
-        text-decoration: none;
-      }
-      .header a:hover{
-        transition: color 0.1s ease;
-        color: #b6d6c7;
-      }
-      .header{
-        margin-left: 40px;
-        color: #068e62;
-      }
-      .links ul{
-        list-style-type: none;
-        text-align: center;
-      }
-      .links ul li{
-        padding: .1em 1.4em;
-        display: inline-block;
-      }
-      .reasons{
-        background-color: #202020;
-        border-radius: 3px;
-        color: #fff;
-        margin: 0px auto;
-        display: inline-block;
-        padding-bottom: 1em;
-        padding-right: 1em;
-      }
-      .reasons li{
-        font-weight: 300;
-        margin-top: 12px;
-      }
-      .text-center{
-        text-align: center;
-      }
-      .text-left{
-        text-align: left;
-      }
-      .logo-slug{
-        margin-top: 1.8em;
-      }
-    </style>
-   
+      
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <div class="header">
@@ -212,8 +72,11 @@ StepTest
           <li>
             <a href="https://github.com/step-test/karma-step-test">Karma Test Runner</a>
           </li>
-          <li>
+           <li>
             <a href="https://github.com/step-test/step-test-explain">StepTest Explain (Tool)</a>
+          </li>
+          <li>
+            <a href="/embedded-tests">Embedded Tests</a>
           </li>
         </ul>
       </div>
